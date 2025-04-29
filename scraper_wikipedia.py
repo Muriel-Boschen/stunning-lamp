@@ -25,4 +25,3 @@ for item in eventos:
 
 wb.save("eventos_atuais.xlsx")
 print("Planilha criada com sucesso!")
-
