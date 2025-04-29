@@ -5,3 +5,5 @@ from datetime import datetime
 
 response = requests.get(url)
 soup = BeautifulSoup(response.text, 'html.parser')
+
+eventos = soup.select(".mw-parser-output > ul li")
