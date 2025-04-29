@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 from openpyxl import Workbook
 from datetime import datetime
 
+
 url = 'https://pt.wikipedia.org/wiki/Portal:Eventos_atuais'
 
 response = requests.get(url)
@@ -24,5 +25,3 @@ for item in eventos:
 
 wb.save("eventos_atuais.xlsx")
 print("Planilha criada com sucesso!")
-
-
