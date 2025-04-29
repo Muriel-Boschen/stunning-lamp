@@ -12,3 +12,15 @@ wb = Workbook()
 ws = wb.active
 ws.title = "Eventos Atuais"
 ws.append(["Manchete", "Data"])
+
+from datetime import datetime
+data_hoje = datetime.today().strftime('%Y-%m-%d')
+
+for item in eventos:
+    texto = item.get_text()
+    ws.append([texto, data_hoje])
+
+
+wb.save("eventos_atuais.xlsx")
+print("Planilha criada com sucesso!")
+
