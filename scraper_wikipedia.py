@@ -2,6 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 from openpyxl import Workbook
 from datetime import datetime
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
 
 
 url = 'https://pt.wikipedia.org/wiki/Portal:Eventos_atuais'
