@@ -1,0 +1,30 @@
+name: CI - Python Scraper
+
+on:
+  push:
+    branches: [pucpr]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Clona o repositório
+      uses: actions/checkout@v3
+
+    - name: Configura Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Instala dependências
+      run: |
+        python -m pip install --upgrade pip
+        pip install beautifulsoup4 requests openpyxl flake8
+
+    - name: Verifica qualidade do código (flake8)
+      run: |
+        flake8 scraper_wikipedia.py --max-line-length=100
+
